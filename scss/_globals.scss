@@ -1,0 +1,22 @@
+// vars
+
+$black: #000000;
+$white: #FFFFFF;
+$purple: purple;
+$green: green;
+$blue: blue;
+$red: red;
+$lightgreen: lightgreen;
+$lightblue: lightblue;
+
+$dev-mode: 1px dotted $purple;
+
+// mixins
+@mixin prefix($property, $var)
+{
+	-webkit-#{$property}: #{$var};
+	   -moz-#{$property}: #{$var};
+	    -ms-#{$property}: #{$var};
+	     -o-#{$property}: #{$var};
+	        #{$property}: #{$var};
+}
