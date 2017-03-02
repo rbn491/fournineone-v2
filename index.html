@@ -1,23 +1,50 @@
 <!doctype html>
 <head>
 	<title>fournineone-v2</title>
+	<link href="css/libs/swiper.min.css" media="screen" rel="stylesheet" type="text/css" />
 	<link href="css/application.css" media="screen" rel="stylesheet" type="text/css" />
-  	<script src="js/application.js"></script>
 </head>
 <body>
-	<header id="header-wrapper"></header>
+	<header id="header-wrapper">
+		<div class="header-inner">
+			<nav class="navigation">
+				<ul>
+					<li>section _1</li>
+					<li>section _2</li>
+					<li>section _3</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
 	<div class="intro-text-wrapper">
 		<div class="intro-text">
-			<h1 class="headline-h1"><!-- headline --></h1>
+			<h1 class="headline-h1">Intro headline</h1>
 			<p class="paragraph">
-				<!-- introduction text -->
+				Intro text, lorem ipsum dolor sit amet consetetur sadipscing. Lorem ipsum dolor sit amet consetetur sadipscing.
+				Lorem ipsum dolor sit amet consetetur sadipscing. Lorem ipsum dolor sit amet consetetur sadipscing. Lorem ipsum dolor sit amet consetetur sadipscing. Lorem ipsum dolor sit amet consetetur sadipscing.
 			</p>
 		</div>
 	</div>
 	<section id="section-1" class="section-wrapper">
 		<h2 class="headline-h2"><!-- sub headline --></h2>
 		<div class="section-inner">
-			<div id="swiper-1" class="swiper-container"><!-- swiper stuff --></div>
+			<div id="swiper-1" class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<h3 class="slide-headline headline-h3">slide _1</h3>
+						<div id="slide-1" class="image" style="background-image: url('images/img-1.jpg');"></div>
+					</div>
+					<div class="swiper-slide">
+						<h3 class="slide-headline headline-h3">slide _2</h3>
+						<div id="slide-2" class="image" style="background-image: url('images/img-2.jpg');"></div>
+					</div>
+					<div class="swiper-slide">
+						<h3 class="slide-headline headline-h3">slide _3</h3>
+						<div id="slide-3" class="image" style="background-image: url('images/img-3.jpg');"></div>
+					</div>
+				</div>
+				<div id="swiper-1" class="swiper-pagination"></div>
+			</div>
 		</div>
 	</section>
 	<section id="section-2" class="section-wrapper">
@@ -27,5 +54,7 @@
 		</div>
 	</section>
 	<footer id="footer-wrapper"></footer>
+	<script src="js/libs/swiper.min.js"></script>
+  	<script src="js/application.js"></script>
 </body>
 </html>
