@@ -1,5 +1,7 @@
-@import '_globals';
-@import '_reset';
+@import 'base/_mixins';
+@import 'base/_globals';
+@import 'base/_fonts';
+@import 'base/_reset';
 @import '_header';
 @import '_header-responsive';
 @import '_content';

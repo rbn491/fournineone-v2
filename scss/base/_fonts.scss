@@ -1,0 +1,45 @@
+/*
+	desc: Montserrat
+	src: https://fonts.google.com/specimen/Montserrat?category=Serif,Display&query=montserrat
+*/
+
+@font-face {
+	font-family: 'Montserrat-Regular';
+	src: url('../fonts/montserrat/Montserrat-Regular.ttf')  format('truetype');
+	text-rendering: optimizeLegibility;
+}
+
+@font-face {
+	font-family: 'Montserrat-Bold';
+	src: url('../fonts/montserrat/Montserrat-Bold.ttf')  format('truetype');
+	text-rendering: optimizeLegibility;
+}
+
+/*
+  desc: Arvo
+  src: https://www.fontsquirrel.com/fonts/arvo?filter%5Bclassifications%5D%5B0%5D=slab+serif&filter%5Bfamily_size%5D=4
+*/
+
+@font-face {
+  font-family: 'Arvo-Regular';
+  src: url('../fonts/arvo/Arvo-Regular.ttf') format('truetype');
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: 'Arvo-Italic';
+  src: url('../fonts/arvo/Arvo-Italic.ttf') format('truetype');
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: 'Arvo-Bold';
+  src: url('../fonts/arvo/Arvo-Bold.ttf') format('truetype');
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: 'Arvo-BoldItalic';
+  src: url('../fonts/arvo/Arvo-BoldItalic.ttf') format('truetype');
+  text-rendering: optimizeLegibility;
+}

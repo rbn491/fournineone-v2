@@ -1,0 +1,39 @@
+// dev mode
+@mixin dev-mode() {
+    border: 1px dotted red;
+}
+
+// prefix mixin
+@mixin prefix($property, $var)
+{
+    -webkit-#{$property}: #{$var};
+       -moz-#{$property}: #{$var};
+        -ms-#{$property}: #{$var};
+         -o-#{$property}: #{$var};
+            #{$property}: #{$var};
+}
+
+// font mixins
+@mixin montserrat-normal() {
+    font-family: 'Montserrat-Regular', sans-serif;
+}
+
+@mixin montserrat-bold() {
+    font-family: 'Montserrat-Bold', sans-serif;
+}
+
+@mixin arvo-regular() {
+    font-family: 'Arvo-Regular', serif;
+}
+
+@mixin arvo-italic() {
+    font-family: 'Arvo-Italic', serif;
+}
+
+@mixin arvo-bold() {
+    font-family: 'Arvo-Bold', serif;
+}
+
+@mixin arvo-bolditalic() {
+    font-family: 'Arvo-BoldItalic', serif;
+}

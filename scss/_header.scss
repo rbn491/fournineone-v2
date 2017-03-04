@@ -1,0 +1,96 @@
+#header-wrapper
+{
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    top: 0;
+    display: block;
+    // background: lightgreen;
+
+    .header-inner
+    {
+        position: relative;
+    }
+
+    .navigation
+    {
+        position: relative;
+        float: right;
+        margin: 30px 30px 0 0;
+
+        .navigation-controller
+        {
+    
+        }
+
+        #navigation-button
+        {
+            position: relative;
+            width: 54px;
+            height: 54px;
+            display: block;
+            margin: auto;
+            padding: 0;
+            background: transparent;
+            cursor: pointer;
+            border: none;
+
+            .bar 
+            {
+                position: relative;
+                float: right;
+                max-width: 54px;
+                height: 5px;
+                background: black;
+                border-radius: 2px;
+            }
+
+            .top
+            {   width: 100%;
+                margin: 0 0 9px 0;
+            }
+
+            .center
+            {
+                width: 70%;
+                margin: 0 0 9px 0;
+                @include prefix(transition, width .3s linear);
+            }
+
+            .bottom
+            {
+                width: 40%;
+                margin: 0;
+                @include prefix(transition, width .3s linear);
+            }
+
+            &:hover
+            {
+                .center
+                {   
+                    width: 100%;
+                }
+
+                .bottom
+                {
+                    width: 100%;
+                }
+            }
+        }
+
+        ul
+        {
+            display: none;
+
+            .nav-item
+            {
+                a
+                {
+                    @include montserrat-bold();
+                    color: black;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

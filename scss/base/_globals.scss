@@ -1,0 +1,37 @@
+// global font styles and variables
+h1,
+h2,
+h3,
+{
+    @include montserrat-bold();
+}
+
+.headline-h1
+{}
+
+.headline-h2
+{}
+
+.headline-h3
+{}
+
+.paragraph
+{
+    @include arvo-italic();
+}
+
+.span-headline
+{
+    @include arvo-bolditalic();
+}
+
+// mobile breakpoints
+// $small-phone: 320px;
+$regular-phone: 360px;
+$phone: 480px;
+$phone-landscape: 540px;
+$tablet: 768px;
+$tablet-landscape: 1024px;
+$desktop: 1280px;
+$desktop-large: 1680px;
+$desktop-very-large: 1920px;
