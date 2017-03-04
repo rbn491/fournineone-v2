@@ -1,11 +1,15 @@
 #header-wrapper
 {
+    *
+    {
+        @include dev-mode();
+    }
+
     position: fixed;
     width: 100%;
     height: 120px;
     top: 0;
     display: block;
-    // background: lightgreen;
 
     .header-inner
     {
@@ -15,12 +19,12 @@
     .navigation
     {
         position: relative;
-        float: right;
-        margin: 30px 30px 0 0;
 
         .navigation-controller
         {
-    
+            position: relative;
+            float: right;
+            margin: 30px 30px 0 0;
         }
 
         #navigation-button
@@ -78,17 +82,37 @@
             }
         }
 
-        ul
+        .navigation-list-container
         {
-            display: none;
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            display: block;
+            position: absolute;
+            background: lightblue;
+            right: 0%;
+            z-index: 100;
 
-            .nav-item
+            &.visible
             {
-                a
+                right: 0%;
+            }
+
+            ul
+            {
+                .nav-item
                 {
-                    @include montserrat-bold();
-                    color: black;
-                    text-decoration: none;
+                    width: inherit;
+                    height: 40px; 
+                    display: block;
+
+                    a
+                    {
+                        @include montserrat-bold();
+                        color: black;
+                        text-decoration: none;
+                        display: block;
+                    }
                 }
             }
         }
