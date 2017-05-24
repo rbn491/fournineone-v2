@@ -45,60 +45,46 @@
 
         .page
         {
+            width: 100%;
+
             .content-wrapper
             {
                 position: relative;
-                padding: 30px;
+                padding: 20px;
+            }
+        }
+
+        .flex-wrapper
+        {
+            display: block;  
+        
+            .flex-item-1
+            {
+                @include dev-mode();
+
+                flex: 1;
+                order: 1;
             }
 
-            .row
+            .flex-item-2
             {
-                position: relative;
+                @include dev-mode();
 
-                &:after
-                {
-                    content: '';
-                    display: block;
-                    clear: both;
-                }
-            
-                .column
-                {
-                    float: left;
-                    width: 100%;
-                    display: block;
+                flex: 1;
+                order: 2;
+            }
 
-                    .one,
-                    .two,
-                    .three,
-                    .four
-                    {   
-                        border: 1px dotted black;
+            .flex-item-3
+            {
+                @include dev-mode();
 
-                        float: left;
-                        padding: 0 4px 0 4px;
-                    }
-
-                    .one
-                    {
-                        width: 100%;
-                    }
-
-                    .two
-                    {
-                        width: 50%;
-                    }
-
-                    .three
-                    {
-                        width: 33.3333%;
-                    }
-
-                    .four
-                    {
-                        width: 25%;
-                    }
-                }
+                flex: 1;
+                order: 3;
+            }
+        
+            .item-inner
+            {
+                padding: 10px;
             }
         }
     }

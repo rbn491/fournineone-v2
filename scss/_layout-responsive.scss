@@ -1,0 +1,60 @@
+@media screen and (min-width: $phone-landscape)
+{
+    	
+}
+
+@media screen and (min-width: $tablet)
+{
+	.main-container
+    {
+        .main-inner-wrapper
+        {
+            .page
+            {}
+
+            .flex-wrapper
+            {
+                display: flex;
+
+                .flex-item-1
+                {
+                    flex: 2;
+                }
+
+                .flex-item-2
+                {
+                    flex: 2;
+                }
+
+                .flex-item-3
+                {
+                    flex: 2;
+                }
+
+                .item-inner
+                {
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $tablet-landscape)
+{
+	
+}
+
+@media screen and (min-width: $desktop)
+{
+    .main-container
+    {
+        .main-inner-wrapper
+        {
+            .page
+            {
+                max-width: 1100px;
+            }
+        }
+    }
+}

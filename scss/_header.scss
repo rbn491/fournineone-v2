@@ -1,0 +1,86 @@
+#navigation-container
+{
+    position: absolute;
+    z-index: 1000;
+
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    background: grey;
+
+    .nav-wrapper
+    {
+        .burger-wrapper
+        {
+            position: relative;
+            display: block;
+            width: 100%;
+        }
+
+        .burger-button
+        {
+            width: 74px;
+            height: 74px;
+            top: 0;
+            left: 0;
+            background: white;
+            padding: 17px 10px;
+            cursor: pointer;
+
+            span
+            {
+                position: relative;
+                background: black;
+                height: 7px;
+                display: block;
+                border-radius: 2px;
+                left: 0;
+
+                @include prefix(transition, width .6s ease-in-out);
+
+
+                &:first-of-type
+                {
+                    width: 95%;
+                    margin-bottom: 10px;
+                }
+
+                &:nth-of-type(2)
+                {
+                    width: 50%;
+                }
+
+                &:last-of-type
+                {
+                    width: 70%;
+                    margin-top: 10px;
+                }
+            }
+
+            &:hover
+            {
+                span
+                {
+                    width: 100%;
+                }
+            }
+        }
+
+        .nav-list-wrapper
+        {
+            ul
+            {
+
+            }
+
+            li
+            {
+                a
+                {
+
+                }
+            }
+        }
+    }
+}
