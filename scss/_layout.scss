@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+body
+{
+    overflow: hidden;
+}
+
 .main-container
 {
     position: absolute;
@@ -23,7 +28,7 @@
         }
 
         .swiper-slide
-        {   
+        {
             // DEMO STYLES
             text-align: center;
             font-size: 18px;
@@ -56,8 +61,8 @@
 
         .flex-wrapper
         {
-            display: block;  
-        
+            display: block;
+
             .flex-item-1
             {
                 @include dev-mode();
@@ -81,7 +86,7 @@
                 flex: 1;
                 order: 3;
             }
-        
+
             .item-inner
             {
                 padding: 10px;

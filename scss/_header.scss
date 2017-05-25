@@ -1,29 +1,17 @@
 #navigation-container
 {
-    position: absolute;
-    z-index: 1000;
-
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    height: 100%;
-    background: grey;
-
-    .nav-wrapper
+    .burger-wrapper
     {
-        .burger-wrapper
-        {
-            position: relative;
-            display: block;
-            width: 100%;
-        }
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        z-index: 1000;
 
         .burger-button
         {
             width: 74px;
             height: 74px;
-            top: 0;
-            left: 0;
             background: white;
             padding: 17px 10px;
             cursor: pointer;
@@ -32,54 +20,107 @@
             {
                 position: relative;
                 background: black;
-                height: 7px;
+                height: 6px;
                 display: block;
                 border-radius: 2px;
-                left: 0;
+                float: right;
 
-                @include prefix(transition, width .6s ease-in-out);
+                @include prefix(transition, width .4s ease-in-out);
 
 
                 &:first-of-type
                 {
-                    width: 95%;
+                    width: 100%;
                     margin-bottom: 10px;
+                    @include prefix(transform, rotate(0deg));
+                    @include prefix(transform-origin, 0% 160%);
+                    @include prefix(transition, transform .12s ease-in-out);
                 }
 
                 &:nth-of-type(2)
                 {
                     width: 50%;
+                    @include prefix(transform, translate3d(0%, 0, 0));
+                    @include prefix(transition, transform .1s linear);
                 }
 
                 &:last-of-type
                 {
-                    width: 70%;
-                    margin-top: 10px;
-                }
-            }
-
-            &:hover
-            {
-                span
-                {
                     width: 100%;
+                    margin-top: 10px;
+                    @include prefix(transform, rotate(0deg));
+                    @include prefix(transform-origin, 20% 0%);
+                    @include prefix(transition, transform .12s ease-in-out);
                 }
             }
         }
 
-        .nav-list-wrapper
+        &.active
         {
+            .burger-button
+            {
+                span
+                {
+                    &:first-of-type
+                    {
+                        @include prefix(transform, rotate(45deg));
+                    }
+
+                    &:nth-of-type(2)
+                    {
+                        @include prefix(transform, translate3d(180%, 0, 0));
+                    }
+
+                    &:last-of-type
+                    {
+                        @include prefix(transform, rotate(-45deg));
+                    }
+                }
+            }
+        }
+    }
+
+    .nav-list-wrapper
+    {
+        position: absolute;
+        top: -100%;
+        width: 100%;
+        height: 100%;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 500;
+        @include prefix(transition, top .3s ease-in-out);
+        @include prefix(transition-delay, .08s);
+
+        &.open
+        {
+            top: 0;
+
             ul
             {
-
+                opacity: 1;
             }
+        }
 
-            li
+        ul
+        {
+            padding: 0;
+            margin: 0;
+        }
+
+        li
+        {
+            font-size: 24px;
+            list-style: none;
+            margin: 40px 15px;
+            text-align: center;
+
+            a
             {
-                a
-                {
-
-                }
+                display: inline-block;
+                text-decoration: none;
             }
         }
     }
