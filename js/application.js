@@ -14,30 +14,35 @@ function init()
     var navListWrapper = navContainer.querySelector('.nav-list-wrapper');
     var navItems = navContainer.querySelectorAll('.nav-list-item');
 
-    TweenMax.staggerFrom(navItems, 2,
-    {
-        x: 0,
-        force3D:true
-    }, 0.2);
-
     navController.addEventListener('click', function(e)
     {
         var btn = e.currentTarget.parentNode;
         var isActive = btn.classList.contains('active');
         var isWrapperOpen = navListWrapper.classList.contains('open');
 
-
         isActive ? btn.classList.remove('active') : btn.classList.add('active');
-        isWrapperOpen ? navListWrapper.classList.remove('open') : navListWrapper.classList.add('open');
 
-        setTimeout(function()
+        if(!isWrapperOpen)
         {
-            TweenMax.staggerTo(navItems, 0.5,
-            {
-                x: -600
-            }, 0.1);
-        }, 350);
+            navListWrapper.classList.add('open');
+
+            animateNavigationItems();
+        }
+        else
+        {
+            navListWrapper.classList.remove('open');
+        }
     });
+
+    function animateNavigationItems()
+    {
+        TweenMax.staggerFrom(navItems, .8,
+        {
+            delay: .18,
+            x: -390,
+            opacity: 0
+        }, .2);
+    }
 
     pageSwiper = new Swiper(swiperContainer, options);
 }

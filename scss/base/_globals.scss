@@ -1,7 +1,9 @@
 // global font styles and variables
-h1,
-h2,
-h3,
+
+
+.headline-h1,
+.headline-h2,
+.headline-h3
 {
     @include montserrat-bold();
 }
@@ -15,14 +17,26 @@ h3,
 .headline-h3
 {}
 
+p,
 .paragraph
 {
     @include arvo-italic();
 }
 
+span,
 .span-headline
 {
     @include arvo-bolditalic();
+}
+
+li.nav-list-item
+{
+    @include montserrat-normal();
+}
+
+a
+{
+
 }
 
 // mobile breakpoints
