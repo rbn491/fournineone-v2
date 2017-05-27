@@ -1,17 +1,6 @@
 function init()
 {
-    // var pageSwiper;
-    // var swiperContainer = document.querySelector('.swiper-container');
-    // var swiperPagination = document.querySelector('.page-controller .swiper-pagination');
-    // var options = {
-    //     speed: 400,
-    //     pagination: swiperPagination,
-    //     paginationClickable: false,
-    //     direction: 'vertical'
-    // };
-
-    // pageSwiper = new Swiper(swiperContainer, options);
-
+    var body = document.body;
     var navContainer = document.querySelector('#navigation-container');
     var navController = navContainer.querySelector('.burger-button');
     var navListWrapper = navContainer.querySelector('.nav-list-wrapper');
@@ -20,6 +9,8 @@ function init()
 
     navController.addEventListener('click', function(e)
     {
+        e.preventDefault();
+
         var btn = e.currentTarget.parentNode;
         var isActive = btn.classList.contains('active');
         var isWrapperOpen = navListWrapper.classList.contains('open');
@@ -28,33 +19,38 @@ function init()
 
         if(!isWrapperOpen)
         {
+            body.classList.add('hidden');
             navListWrapper.classList.add('open');
+            // showNavList();
 
-            showNavList();
-            handleNavigationClick();
+            for(var i = 0; i < items.length; i++)
+            {
+                items[i].addEventListener('click', function(e)
+                {
+                    e.preventDefault();
+
+                    var clickedItem = e.currentTarget;
+                    var target = clickedItem.dataset.targetId;
+
+                    console.log(target);
+
+                    btn.classList.remove('active');
+                    navListWrapper.classList.remove('open');
+
+                    var scrollToSection = TweenMax.to(window, 2,
+                    {
+                        scrollTo: '#' + target
+                    });
+                });
+            }
         }
         else
         {
+            body.classList.remove('hidden');
             navListWrapper.classList.remove('open');
-
-            hideNavList();
+            // hideNavList();
         }
     });
-
-    function handleNavigationClick()
-    {
-        for(var i = 0; i < items.length; i++)
-        {
-            items[i].addEventListener('click', function(e)
-            {
-                var clickedItem = e.currentTarget;
-                var target = clickedItem.dataset.targetId;
-
-                // pageSwiper.slideTo(target);
-                navListWrapper.classList.remove('open');
-            });
-        }
-    }
 
     function showNavList()
     {
