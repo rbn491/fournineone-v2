@@ -9,6 +9,9 @@ function init()
         paginationClickable: true,
         direction: 'vertical'
     };
+
+    pageSwiper = new Swiper(swiperContainer, options);
+
     var navContainer = document.querySelector('#navigation-container');
     var navController = navContainer.querySelector('.burger-button');
     var navListWrapper = navContainer.querySelector('.nav-list-wrapper');
@@ -26,25 +29,24 @@ function init()
         {
             navListWrapper.classList.add('open');
 
-            animateNavigationItems();
+            var tween = TweenMax.staggerFrom(navItems, .8,
+            {
+                delay: .18,
+                x: -390,
+                opacity: 0
+            }, .2);
         }
         else
         {
             navListWrapper.classList.remove('open');
+
+            var tween = TweenMax.to(navItems, .08,
+            {
+                x: 0,
+                opacity: 1
+            });
         }
     });
-
-    function animateNavigationItems()
-    {
-        TweenMax.staggerFrom(navItems, .8,
-        {
-            delay: .18,
-            x: -390,
-            opacity: 0
-        }, .2);
-    }
-
-    pageSwiper = new Swiper(swiperContainer, options);
 }
 
 window.onload = init;
