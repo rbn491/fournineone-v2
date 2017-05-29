@@ -74,14 +74,13 @@ body
     {
         position: relative;
         display: inline-block;
-        // width: 100%;
-        // max-width: 250px;
         background: transparent;
 
         .button-inner
         {
             a
             {
+                position: relative;
                 @include montserrat-bold();
                 color: $black;
                 text-decoration: none;
@@ -89,6 +88,43 @@ body
                 display: block;
                 border: 3px solid $black;
                 padding: 13px 30px;
+                overflow: hidden;
+                z-index: 1;
+
+                &:before
+                {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -190%;
+                    width: 180%;
+                    height: 180%;
+                    display: block;
+                    background: $primary-background-color;
+                    z-index: -1;
+                    @include prefix(transform, skew(40deg));
+                    @include prefix(transition, left .3s ease-in-out);
+                }
+
+                &:after
+                {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    width: 45%;
+                    top: 0;
+                    left: 0;
+                    background: $black;
+                    z-index: -1;
+                }
+
+                &:hover
+                {
+                    &:before
+                    {
+                        left: -10%;
+                    }
+                }
             }
         }
     }
