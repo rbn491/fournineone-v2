@@ -69,4 +69,27 @@ body
             }
         }
     }
+
+    .button-wrapper
+    {
+        position: relative;
+        display: inline-block;
+        // width: 100%;
+        // max-width: 250px;
+        background: transparent;
+
+        .button-inner
+        {
+            a
+            {
+                @include montserrat-bold();
+                color: $black;
+                text-decoration: none;
+                text-align: center;
+                display: block;
+                border: 3px solid $black;
+                padding: 13px 30px;
+            }
+        }
+    }
 }
