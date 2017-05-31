@@ -3,14 +3,13 @@
     border: 1px dotted red;
 }
 
-// prefix mixin
-@mixin prefix($property, $var)
+// prefix mixin general
+@mixin prefix($property, $var...)
 {
-    -webkit-#{$property}: #{$var};
-       -moz-#{$property}: #{$var};
-        -ms-#{$property}: #{$var};
-         -o-#{$property}: #{$var};
-            #{$property}: #{$var};
+    -webkit-#{$property}: $var;
+       -moz-#{$property}: $var;
+        -ms-#{$property}: $var;
+            #{$property}: $var;
 }
 
 // font mixins
