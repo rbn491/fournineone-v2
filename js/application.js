@@ -21,7 +21,7 @@ function init()
         {
             body.classList.add('hidden');
             navListWrapper.classList.add('open');
-            // showNavList();
+            showNavList();
 
             for(var i = 0; i < items.length; i++)
             {
@@ -54,20 +54,20 @@ function init()
 
     function showNavList()
     {
-        var tween = TweenMax.staggerFrom(navItems, .8,
+        var tween = TweenMax.staggerFrom(navItems, .4,
         {
-            delay: .18,
-            x: -390,
-            opacity: 0
-        }, .2);
+            delay: .015,
+            x: 390,
+            opacity: 0,
+            ease: Sine.easeIn
+        }, .15);
     }
 
     function hideNavList()
     {
-        var tween = TweenMax.to(navItems, .08,
+        var tween = TweenMax.to(navItems, .04,
         {
-            x: 0,
-            opacity: 1
+            x: 390
         });
     }
 }
