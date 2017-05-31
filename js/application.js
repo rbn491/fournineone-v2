@@ -1,11 +1,23 @@
 function init()
 {
     var body = document.body;
+    var overlay = body.querySelector('#overlay');
     var navContainer = document.querySelector('#navigation-container');
     var navController = navContainer.querySelector('.burger-button');
     var navListWrapper = navContainer.querySelector('.nav-list-wrapper');
     var navItems = navContainer.querySelectorAll('.nav-list-item');
     var items = navContainer.querySelectorAll('.nav-list-item a');
+
+    var isOverlayActive = overlay.classList.contains('visible');
+
+    overlay.addEventListener('click', function(e)
+    {
+        // e.preventDefault();
+
+        navListWrapper.classList.remove('open');
+        overlay.classList.remove('visible');
+        navController.parentNode.classList.remove('active');
+    });
 
     navController.addEventListener('click', function(e)
     {
@@ -20,6 +32,7 @@ function init()
         if(!isWrapperOpen)
         {
             body.classList.add('hidden');
+            overlay.classList.add('visible');
             navListWrapper.classList.add('open');
             showNavList();
 
@@ -47,6 +60,7 @@ function init()
         else
         {
             body.classList.remove('hidden');
+            overlay.classList.remove('visible');
             navListWrapper.classList.remove('open');
             // hideNavList();
         }
