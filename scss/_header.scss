@@ -33,23 +33,22 @@
                 height: 3px;
                 display: block;
                 border-radius: 2px;
-                @include prefix(transform-origin, 50% 50%);
-
+                @include prefix(transform-origin, 0% 0%);
 
                 &:first-of-type
                 {
                     width: 100%;
-                    top: 3px;
-                    right: 0;
+                    top: 4px;
+                    left: 0;
                     @include prefix(transform, rotate(0deg));
-                    @include prefix(transition, top .075s linear, transform .085s linear);
+                    @include prefix(transition, top .06s linear, left .06s linear, transform .08s linear);
                 }
 
                 &:nth-of-type(2)
                 {
                     width: 100%;
                     top: 50%;
-                    right: 0;
+                    left: 0;
                     @include prefix(transform, translate3d(0, -50%, 0));
                     @include prefix(transition, transform .19s linear);
                 }
@@ -57,10 +56,10 @@
                 &:last-of-type
                 {
                     width: 100%;
-                    bottom: 3px;
-                    right: 0;
+                    bottom: 4px;
+                    left: 0;
                     @include prefix(transform, rotate(0deg));
-                    @include prefix(transition, bottom .075s linear, transform .085s linear);
+                    @include prefix(transition, transform .08s linear);
                 }
             }
         }
@@ -73,7 +72,8 @@
                 {
                     &:first-of-type
                     {
-                        top: 16px;
+                        top: 3px;
+                        left: 2px;
                         @include prefix(transform, rotate(45deg));
                     }
 
@@ -84,7 +84,7 @@
 
                     &:last-of-type
                     {
-                        bottom: 16px;
+                        // bottom: 16px;
                         @include prefix(transform, rotate(-45deg));
                     }
                 }
