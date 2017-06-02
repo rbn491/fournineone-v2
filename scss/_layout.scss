@@ -103,11 +103,6 @@ body
                             visibility: visible;
                             opacity: 1;
                             @include prefix(transition-delay, 0s);
-
-                            // &:before
-                            // {
-                            //     left: -10%;
-                            // }
                         }
                     }
                 }
@@ -134,21 +129,6 @@ body
                     overflow: hidden;
                     z-index: 2;
                     opacity: 0;
-
-                    // &:before
-                    // {
-                    //     content: '';
-                    //     position: absolute;
-                    //     top: 0;
-                    //     left: -190%;
-                    //     width: 180%;
-                    //     height: 180%;
-                    //     display: block;
-                    //     background: $white;
-                    //     z-index: -1;
-                    //     @include prefix(transform, skew(40deg));
-                    //     @include prefix(transition, left .3s ease-in-out);
-                    // }
                 }
             }
         }
