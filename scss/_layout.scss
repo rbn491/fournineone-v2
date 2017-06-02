@@ -80,7 +80,7 @@ body
                         height: 180%;
                         display: block;
                         background: $primary-background-color;
-                        opacity: .4;
+                        opacity: .58;
                         z-index: 1;
                         @include prefix(transform, skew(40deg));
                         @include prefix(transition, left .3s ease-in-out);
