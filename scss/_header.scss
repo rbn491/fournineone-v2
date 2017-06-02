@@ -48,8 +48,8 @@
                 {
                     width: 75%;
                     top: 50%;
-                    right: 0;
-                    @include prefix(transform, translate3d(0, -50%, 0));
+                    left: 50%;
+                    @include prefix(transform, translate3d(-50%, -50%, 0));
                     @include prefix(transition, transform .19s linear);
                 }
 

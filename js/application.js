@@ -48,6 +48,7 @@ function init()
                     console.log(target);
 
                     btn.classList.remove('active');
+                    overlay.classList.remove('visible');
                     navListWrapper.classList.remove('open');
 
                     var scrollToSection = TweenMax.to(window, 2,
@@ -70,11 +71,10 @@ function init()
     {
         var tween = TweenMax.staggerFrom(navItems, .4,
         {
-            delay: .015,
             x: 390,
             opacity: 0,
             ease: Sine.easeIn
-        }, .15);
+        }, .14);
     }
 
     function hideNavList()

@@ -55,6 +55,102 @@ body
                 position: relative;
                 padding: 15px;
             }
+
+            .image-grid
+            {
+                margin: 0 0 20px 0;
+            }
+
+            .image-wrapper
+            {
+                position: relative;
+                overflow: hidden;
+
+                .project-link
+                {
+                    overflow: hidden;
+
+                    &:before
+                    {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: -190%;
+                        width: 180%;
+                        height: 180%;
+                        display: block;
+                        background: $primary-background-color;
+                        opacity: .4;
+                        z-index: 1;
+                        @include prefix(transform, skew(40deg));
+                        @include prefix(transition, left .3s ease-in-out);
+                    }
+
+                    &:hover
+                    {
+                        &:before
+                        {
+                            left: -10%;
+                        }
+
+                        img
+                        {
+
+                        }
+
+                        .project-title
+                        {
+                            visibility: visible;
+                            opacity: 1;
+                            @include prefix(transition-delay, 0s);
+
+                            // &:before
+                            // {
+                            //     left: -10%;
+                            // }
+                        }
+                    }
+                }
+
+                img
+                {
+                    width: 100%;
+                    display: block;
+                }
+
+                .project-title
+                {
+                    visibility: hidden;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    @include prefix(transform, translate3d(-50%, -50%, 0));
+                    display: block;
+                    color: $white;
+                    @include prefix(transition, visibility 0s linear .5s, opacity .25s ease-in-out);
+                    @include montserrat-bold();
+                    border: 3px solid $white;
+                    padding: 20px;
+                    overflow: hidden;
+                    z-index: 2;
+                    opacity: 0;
+
+                    // &:before
+                    // {
+                    //     content: '';
+                    //     position: absolute;
+                    //     top: 0;
+                    //     left: -190%;
+                    //     width: 180%;
+                    //     height: 180%;
+                    //     display: block;
+                    //     background: $white;
+                    //     z-index: -1;
+                    //     @include prefix(transform, skew(40deg));
+                    //     @include prefix(transition, left .3s ease-in-out);
+                    // }
+                }
+            }
         }
 
         .flex-wrapper
