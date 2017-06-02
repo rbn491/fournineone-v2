@@ -14,50 +14,53 @@
     .burger-wrapper
     {
         position: fixed;
-        top: 25px;
-        right: 25px;
+        bottom: 25px;
+        right: 45px;
         display: block;
         z-index: 1000;
 
         .burger-button
         {
-            width: 34px;
-            height: 34px;
-            background: transparent;
+            width: 58px;
+            height: 58px;
+            background: $primary-background-color;
+            border-radius: 50%;
             cursor: pointer;
 
             span
             {
-                position: absolute;
-                background: black;
+                position: relative;
+                background: $white;
                 height: 3px;
                 display: block;
                 border-radius: 2px;
                 @include prefix(transform-origin, 0% 0%);
+                top: 32%;
+                @include prefix(transform, translate3d(0, -50%, 0));
+                margin: 0 auto;
 
                 &:first-of-type
                 {
+                    max-width: 30px;
                     width: 100%;
-                    top: 4px;
-                    left: 0;
+                    margin: 0 auto 8px auto;
                     @include prefix(transform, rotate(0deg));
-                    @include prefix(transition, top .06s linear, left .06s linear, transform .08s linear);
+                    @include prefix(transition, transform .08s linear);
                 }
 
                 &:nth-of-type(2)
                 {
-                    width: 75%;
-                    top: 50%;
-                    left: 50%;
+                    max-width: 30px;
+                    width: 100%;
+                    margin: 0 auto 8px auto;
                     @include prefix(transform, translate3d(-50%, -50%, 0));
                     @include prefix(transition, transform .19s linear);
                 }
 
                 &:last-of-type
                 {
+                    max-width: 30px;
                     width: 100%;
-                    bottom: 4px;
-                    left: 0;
                     @include prefix(transform, rotate(0deg));
                     @include prefix(transition, transform .08s linear);
                 }
@@ -72,8 +75,6 @@
                 {
                     &:first-of-type
                     {
-                        top: 3px;
-                        left: 2px;
                         @include prefix(transform, rotate(45deg));
                     }
 
@@ -84,7 +85,6 @@
 
                     &:last-of-type
                     {
-                        // bottom: 16px;
                         @include prefix(transform, rotate(-45deg));
                     }
                 }
@@ -97,7 +97,7 @@
         position: fixed;
         top: 0;
         right: 0;
-        @include prefix(transform, translate3d(100%, 0, 0));
+        @include prefix(transform, translate3d(150%, 0, 0));
         max-width: 300px;
         width: 100%;
         height: 100%;
@@ -111,10 +111,11 @@
         {
             content: '';
             position: absolute;
-            width: 100%;
+            width: 240%;
             height: 100%;
             display: block;
             background: $primary-background-color;
+            @include prefix(transform, skew(14deg));
         }
 
         &.open
