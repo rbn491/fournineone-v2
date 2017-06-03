@@ -83,7 +83,7 @@ body
                         opacity: .58;
                         z-index: 1;
                         @include prefix(transform, skew(40deg));
-                        @include prefix(transition, left .3s ease-in-out);
+                        @include prefix(transition, left .4s ease-in-out);
                     }
 
                     &:hover

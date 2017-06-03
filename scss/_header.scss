@@ -14,18 +14,20 @@
     .burger-wrapper
     {
         position: fixed;
-        bottom: 25px;
-        right: 45px;
+        bottom: 30px;
+        right: 30px;
         display: block;
         z-index: 1000;
 
         .burger-button
         {
-            width: 58px;
-            height: 58px;
+            width: 62px;
+            height: 62px;
             background: $primary-background-color;
             border-radius: 50%;
             cursor: pointer;
+            @include prefix(transform, rotate3d(0, 1, 0, 0deg));
+            @include prefix(transition, transform .3s linear);
 
             span
             {
@@ -34,10 +36,9 @@
                 height: 3px;
                 display: block;
                 border-radius: 2px;
-                @include prefix(transform-origin, 0% 0%);
-                top: 32%;
-                @include prefix(transform, translate3d(0, -50%, 0));
+                top: 30%;
                 margin: 0 auto;
+                @include prefix(transform-origin, 0% 0%);
 
                 &:first-of-type
                 {
@@ -45,7 +46,7 @@
                     width: 100%;
                     margin: 0 auto 8px auto;
                     @include prefix(transform, rotate(0deg));
-                    @include prefix(transition, transform .08s linear);
+                    @include prefix(transition, transform .0s linear);
                 }
 
                 &:nth-of-type(2)
@@ -53,8 +54,8 @@
                     max-width: 30px;
                     width: 100%;
                     margin: 0 auto 8px auto;
-                    @include prefix(transform, translate3d(-50%, -50%, 0));
-                    @include prefix(transition, transform .19s linear);
+                    opacity: 1;
+                    @include prefix(transition, opacity .0s linear);
                 }
 
                 &:last-of-type
@@ -62,7 +63,7 @@
                     max-width: 30px;
                     width: 100%;
                     @include prefix(transform, rotate(0deg));
-                    @include prefix(transition, transform .08s linear);
+                    @include prefix(transition, transform .0s linear);
                 }
             }
         }
@@ -71,21 +72,29 @@
         {
             .burger-button
             {
+                background: $white;
+                @include prefix(transform, rotate3d(0, 1, 0, 180deg));
+
                 span
                 {
+                    background: $primary-background-color;
+
                     &:first-of-type
                     {
                         @include prefix(transform, rotate(45deg));
+                        @include prefix(transition-delay, .15s);
                     }
 
                     &:nth-of-type(2)
                     {
-                        @include prefix(transform, translate3d(400%, -50%, 0));
+                        opacity: 0;
+                        @include prefix(transition-delay, .15s);
                     }
 
                     &:last-of-type
                     {
                         @include prefix(transform, rotate(-45deg));
+                        @include prefix(transition-delay, .15s);
                     }
                 }
             }
@@ -115,7 +124,6 @@
             height: 100%;
             display: block;
             background: $primary-background-color;
-            @include prefix(transform, skew(14deg));
         }
 
         &.open
