@@ -45,8 +45,6 @@ function init()
                     var clickedItem = e.currentTarget;
                     var target = clickedItem.dataset.targetId;
 
-                    console.log(target);
-
                     btn.classList.remove('active');
                     overlay.classList.remove('visible');
                     navListWrapper.classList.remove('open');

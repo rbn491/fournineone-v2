@@ -1,5 +1,6 @@
 // dev mode
-@mixin dev-mode() {
+@mixin dev-mode()
+{
     border: 1px dotted red;
 }
 
@@ -13,26 +14,32 @@
 }
 
 // font mixins
-@mixin montserrat-normal() {
+@mixin montserrat-normal()
+{
     font-family: 'Montserrat-Regular', sans-serif;
 }
 
-@mixin montserrat-bold() {
+@mixin montserrat-bold()
+{
     font-family: 'Montserrat-Bold', sans-serif;
 }
 
-@mixin arvo-regular() {
+@mixin arvo-regular()
+{
     font-family: 'Arvo-Regular', serif;
 }
 
-@mixin arvo-italic() {
+@mixin arvo-italic()
+{
     font-family: 'Arvo-Italic', serif;
 }
 
-@mixin arvo-bold() {
+@mixin arvo-bold()
+{
     font-family: 'Arvo-Bold', serif;
 }
 
-@mixin arvo-bolditalic() {
+@mixin arvo-bolditalic()
+{
     font-family: 'Arvo-BoldItalic', serif;
 }

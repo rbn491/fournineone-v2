@@ -15,7 +15,7 @@
     {
         position: fixed;
         bottom: 30px;
-        right: 30px;
+        right: 40px;
         display: block;
         z-index: 1000;
 
@@ -27,12 +27,11 @@
             border-radius: 50%;
             cursor: pointer;
             @include prefix(transform, rotate3d(0, 1, 0, 0deg));
-            @include prefix(transition, transform .3s linear);
+            @include prefix(transition, transform .3s linear, background .0s linear .15s);
 
             span
             {
                 position: relative;
-                background: $white;
                 height: 3px;
                 display: block;
                 border-radius: 2px;
@@ -45,8 +44,9 @@
                     max-width: 30px;
                     width: 100%;
                     margin: 0 auto 8px auto;
+                    background: $white;
                     @include prefix(transform, rotate(0deg));
-                    @include prefix(transition, transform .0s linear);
+                    @include prefix(transition, transform .0s linear .15s, background 0s linear .15s);
                 }
 
                 &:nth-of-type(2)
@@ -54,16 +54,18 @@
                     max-width: 30px;
                     width: 100%;
                     margin: 0 auto 8px auto;
+                    background: $white;
                     opacity: 1;
-                    @include prefix(transition, opacity .0s linear);
+                    @include prefix(transition, opacity .0s linear .15s, background 0s linear .15s);
                 }
 
                 &:last-of-type
                 {
                     max-width: 30px;
                     width: 100%;
+                    background: $white;
                     @include prefix(transform, rotate(0deg));
-                    @include prefix(transition, transform .0s linear);
+                    @include prefix(transition, transform .0s linear .15s, background 0s linear .15s);
                 }
             }
         }
@@ -82,19 +84,16 @@
                     &:first-of-type
                     {
                         @include prefix(transform, rotate(45deg));
-                        @include prefix(transition-delay, .15s);
                     }
 
                     &:nth-of-type(2)
                     {
                         opacity: 0;
-                        @include prefix(transition-delay, .15s);
                     }
 
                     &:last-of-type
                     {
                         @include prefix(transform, rotate(-45deg));
-                        @include prefix(transition-delay, .15s);
                     }
                 }
             }
@@ -114,7 +113,7 @@
         flex-direction: column;
         justify-content: center;
         z-index: 500;
-        @include prefix(transition, transform .18s ease-in-out .08s);
+        @include prefix(transition, transform .18s ease-in-out .05s);
 
         &:before
         {
