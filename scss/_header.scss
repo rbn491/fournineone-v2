@@ -14,25 +14,44 @@
     .burger-wrapper
     {
         position: fixed;
-        bottom: 30px;
-        right: 40px;
+        bottom: 20px;
+        right: 30px;
         display: block;
         z-index: 1000;
 
         .burger-button
         {
+            position: relative;
             width: 62px;
             height: 62px;
             background: $primary-background-color;
             border-radius: 50%;
             cursor: pointer;
-            @include prefix(transform, rotate3d(0, 1, 0, 0deg));
-            @include prefix(transition, transform .3s linear, background .0s linear .15s);
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 3px 4px 9px rgba(0,0,0,0.15);
+
+            &:after
+            {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 300px;
+                height: inherit;
+                background: $white;
+                top: 0;
+                @include prefix(transform, translate3d(92px, 0, 0));
+                @include prefix(transition, transform .5s linear);
+                z-index: 0;
+            }
 
             span
             {
                 position: relative;
+                max-width: 30px;
+                width: 100%;
                 height: 3px;
+                background: $white;
                 display: block;
                 border-radius: 2px;
                 top: 30%;
@@ -41,31 +60,49 @@
 
                 &:first-of-type
                 {
-                    max-width: 30px;
-                    width: 100%;
                     margin: 0 auto 8px auto;
-                    background: $white;
-                    @include prefix(transform, rotate(0deg));
-                    @include prefix(transition, transform .0s linear .15s, background 0s linear .15s);
                 }
 
                 &:nth-of-type(2)
                 {
-                    max-width: 30px;
-                    width: 100%;
                     margin: 0 auto 8px auto;
-                    background: $white;
-                    opacity: 1;
-                    @include prefix(transition, opacity .0s linear .15s, background 0s linear .15s);
+                }
+            }
+        }
+
+        .close
+        {
+            position: absolute;
+            top: 0;
+            right: 0;
+            @include prefix(transform, translate3d(120px, 0, 0));
+            @include prefix(transition, transform .24s ease-in-out .05s);
+            width: 62px;
+            height: 62px;
+            cursor: pointer;
+            z-index: 2;
+
+            span
+            {
+                position: absolute;
+                width: 30px;
+                height: 3px;
+                display: block;
+                border-radius: 2px;
+                top: 50%;
+                left: 50%;
+                @include prefix(transform-origin, 50% 50%);
+
+                &:first-of-type
+                {
+                    background: $primary-background-color;
+                    @include prefix(transform, translate3d(-50%, -50%, 0) rotate(45deg));
                 }
 
                 &:last-of-type
                 {
-                    max-width: 30px;
-                    width: 100%;
-                    background: $white;
-                    @include prefix(transform, rotate(0deg));
-                    @include prefix(transition, transform .0s linear .15s, background 0s linear .15s);
+                    background: $primary-background-color;
+                    @include prefix(transform, translate3d(-50%, -50%, 0) rotate(-45deg));
                 }
             }
         }
@@ -74,28 +111,15 @@
         {
             .burger-button
             {
-                background: $white;
-                @include prefix(transform, rotate3d(0, 1, 0, 180deg));
-
-                span
+                &:after
                 {
-                    background: $primary-background-color;
-
-                    &:first-of-type
-                    {
-                        @include prefix(transform, rotate(45deg));
-                    }
-
-                    &:nth-of-type(2)
-                    {
-                        opacity: 0;
-                    }
-
-                    &:last-of-type
-                    {
-                        @include prefix(transform, rotate(-45deg));
-                    }
+                    @include prefix(transform, translate3d(-198px, 0, 0));
                 }
+            }
+
+            .close
+            {
+                @include prefix(transform, translate3d(0px, 0, 0));
             }
         }
     }
@@ -105,21 +129,20 @@
         position: fixed;
         top: 0;
         right: 0;
-        @include prefix(transform, translate3d(150%, 0, 0));
-        max-width: 300px;
-        width: 100%;
+        @include prefix(transform, translate3d(300px, 0, 0));
+        width: 300px;
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         z-index: 500;
-        @include prefix(transition, transform .18s ease-in-out .05s);
+        @include prefix(transition, transform .5s linear);
 
         &:before
         {
             content: '';
             position: absolute;
-            width: 240%;
+            width: inherit;
             height: 100%;
             display: block;
             background: $primary-background-color;
@@ -127,7 +150,7 @@
 
         &.open
         {
-            @include prefix(transform, translate3d(0, 0, 0));
+            @include prefix(transform, translate3d(0px, 0, 0));
 
             ul
             {
