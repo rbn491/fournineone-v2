@@ -75,7 +75,7 @@
             position: absolute;
             top: 0;
             right: 0;
-            @include prefix(transform, translate3d(120px, 0, 0));
+            @include prefix(transform, translate3d(80px, 0, 0));
             @include prefix(transition, transform .24s ease-in-out .05s);
             width: 62px;
             height: 62px;
