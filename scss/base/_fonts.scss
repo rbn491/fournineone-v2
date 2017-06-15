@@ -43,3 +43,16 @@
   src: url('../fonts/arvo/Arvo-BoldItalic.ttf') format('truetype');
   text-rendering: optimizeLegibility;
 }
+
+/*
+  icons
+*/
+
+@font-face {
+  font-family: 'Ionicons';
+  src: url('../fonts/ionicons/ionicons.eot');
+  src: url('../fonts/ionicons/ionicons.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/ionicons/ionicons.woff') format('woff'),
+       url('../fonts/ionicons/ionicons.ttf')  format('truetype'),
+       url('../fonts/ionicons/ionicons.svg') format('svg');
+}

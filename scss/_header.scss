@@ -1,5 +1,6 @@
-#navigation-container
+#mobile-navigation-container
 {
+    display: block;
     width: 100%;
 
     &:after
@@ -156,6 +157,11 @@
             {
                 opacity: 1;
             }
+
+            li
+            {
+                @include prefix(transform, translate3d(0, 0, 0));
+            }
         }
 
         ul
@@ -171,19 +177,10 @@
             height: 70px;
             font-size: 24px;
             list-style: none;
-            // margin: 40px 15px;
             text-align: center;
             display: block;
-
-            &:first-of-type
-            {
-                // margin: 0 15px 40px 15px;
-            }
-
-            &:last-of-type
-            {
-                // margin: 40px 15px 0 15px;
-            }
+            @include prefix(transform, translate3d(100%, 0, 0));
+            @include prefix(transition, transform .45s ease-in-out .2s);
 
             a
             {
@@ -211,9 +208,93 @@
                     z-index: -1;
                 }
 
-                &:hover
+                .no-touchevents &
                 {
+                    &:hover
+                    {
 
+                    }
+                }
+            }
+        }
+    }
+}
+
+#desktop-navigation-container
+{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $desktop-nav-width;
+    height: 100vh;
+    background: $black;
+    z-index: 1;
+
+    .nav-list-wrapper
+    {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        @include prefix(transform, translate3d(0, -50%, 0));
+
+        ul
+        {
+            padding: 0;
+            margin: 0;
+        }
+
+        li
+        {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 35px;
+
+            &:last-of-type
+            {
+                margin-bottom: 0;
+            }
+
+            a
+            {
+                position: relative;
+                display: block;
+                font-size: 12px;
+                width: $desktop-nav-width;
+                height: 80px;
+                color: $white;
+                text-decoration: none;
+
+                span.link
+                {
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    bottom: 3px;
+                    text-align: center;
+                    @include prefix(transform, translate3d(100%, 0, 0));
+                    @include prefix(transition, transform .2s ease-in);
+                }
+
+                span.icon
+                {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    @include prefix(transform, translate3d(-50%, -50%, 0));
+                    font-size: 25px;
+                    color: $white;
+                }
+
+                .no-touchevents &
+                {
+                    &:hover
+                    {
+                        span.link
+                        {
+                            @include prefix(transform, translate3d(0, 0, 0));
+                        }
+                    }
                 }
             }
         }

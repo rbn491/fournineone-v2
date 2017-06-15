@@ -1,0 +1,12 @@
+@media screen and (min-width: $tablet)
+{
+    #mobile-navigation-container
+    {
+        display: none;
+    }
+
+    #desktop-navigation-container
+    {
+        display: block;
+    }
+}

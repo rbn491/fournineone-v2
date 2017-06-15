@@ -3,11 +3,14 @@
 // #3fa9cc
 // #80cbb4
 // #ef5350
-$primary-background-color: #80cbb4;
+// #cdedf6
+// #738290
+// #faa916
+$primary-background-color: #3fa9cc;
 
 // Font color and accent color
-$white: #fff;
-$black: #000;
+$white: #fff; // #fffaff
+$black: #1b1b1e;
 $error-message-color: #f25c5c;
 
 .headline-h1,
@@ -50,6 +53,11 @@ span,
     @include arvo-bolditalic();
 }
 
+span.icon
+{
+    @include ionicons();
+}
+
 li.nav-list-item
 {
     @include montserrat-normal();
@@ -58,6 +66,8 @@ li.nav-list-item
 a
 {}
 
+// desktop navigation width
+$desktop-nav-width: 80px;
 
 // mobile breakpoints
 $regular-phone: 360px;

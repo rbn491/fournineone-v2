@@ -2,7 +2,7 @@ function init()
 {
     var body = document.body;
     var overlay = body.querySelector('#overlay');
-    var navContainer = document.querySelector('#navigation-container');
+    var navContainer = document.querySelector('#mobile-navigation-container');
     var navController = navContainer.querySelector('.burger-button');
     var navListWrapper = navContainer.querySelector('.nav-list-wrapper');
     var navItems = navContainer.querySelectorAll('.nav-list-item');
@@ -12,7 +12,7 @@ function init()
 
     overlay.addEventListener('click', function(e)
     {
-        // e.preventDefault();
+        e.preventDefault();
 
         navListWrapper.classList.remove('open');
         overlay.classList.remove('visible');
@@ -34,7 +34,6 @@ function init()
             body.classList.add('hidden');
             overlay.classList.add('visible');
             navListWrapper.classList.add('open');
-            showNavList();
 
             for(var i = 0; i < items.length; i++)
             {
@@ -61,27 +60,8 @@ function init()
             body.classList.remove('hidden');
             overlay.classList.remove('visible');
             navListWrapper.classList.remove('open');
-            // hideNavList();
         }
     });
-
-    function showNavList()
-    {
-        var tween = TweenMax.staggerFrom(navItems, .4,
-        {
-            x: 390,
-            opacity: 0,
-            ease: Sine.easeIn
-        }, .14);
-    }
-
-    function hideNavList()
-    {
-        var tween = TweenMax.to(navItems, .04,
-        {
-            x: 390
-        });
-    }
 }
 
 window.onload = init;

@@ -1,12 +1,14 @@
 @media screen and (min-width: $phone-landscape)
 {
-    	
+
 }
 
 @media screen and (min-width: $tablet)
 {
 	.main-container
     {
+        padding-right: $desktop-nav-width;
+
         .main-inner-wrapper
         {
             .page
@@ -42,7 +44,7 @@
 
 @media screen and (min-width: $tablet-landscape)
 {
-	
+
 }
 
 @media screen and (min-width: $desktop)
